@@ -1,2 +1,11 @@
-.log
+# latex 编译产物及副产物
+# latex compilation products & by-products
+*.log
+*.aux
+*.pdf
+*.dvi
+*.ps
+
+# Mac OS 文件夹配置文件
+# Mac OS folder (?) config
 .DS_Store
