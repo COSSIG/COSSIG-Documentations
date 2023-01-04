@@ -14,14 +14,15 @@
 \usepackage{titling}
 
 \usepackage{xeCJK}
+\xeCJKsetup{CJKspace=true}  % 编译时不忽视中、日、韩文文字间的空格
 
-\xeCJKsetup{CJKspace=true}
-\setCJKmainfont{Source Han Sans SC}
+% 正文字体 - “思源”系列
+\setCJKmainfont{Source Han Sans SC}  % 中文字体：思源黑体（大陆简体）
 \setmainfont{Source Sans Pro}
 \setmonofont{Source Code Pro}
 
-% titling 选项
-% 左对齐标题；超大字体
+% 标题设定
+% 左对齐标题；超大字号
 \pretitle{\begin{flushleft} \huge}
 \posttitle{\end{flushleft}}
 % 不要原作者，不要原作者
@@ -31,4 +32,9 @@
 \predate{}
 \postdate{}
 
-
+% 常用色彩预设
+\selectcolormodel{RGB}
+\definecolor{ThemeDarkBlue}{RGB}{16, 27, 47}
+\definecolor{ThemeYellow}{RGB}{255, 217, 202}
+\definecolor{LightGrey}{RGB}{164, 164, 164}  % Grey - 英式拼写
+\definecolor{LightGray}{RGB}{164, 164, 164}  % Gray - 美式拼写
