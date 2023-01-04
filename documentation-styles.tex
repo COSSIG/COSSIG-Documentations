@@ -1,0 +1,34 @@
+% 这个文件包含了合规的文档样式。如果想要让你的文档的样式符合规定，请在你的 tex 代码中引用这个文件。
+
+\documentclass[10pt, a4paper]{article}
+
+\usepackage[left=25mm, right=25mm, top=25mm, bottom=25mm, headheight=18pt]{geometry}
+
+\usepackage{setspace}
+\usepackage{hyphenat}
+\usepackage{datetime2}
+\usepackage{fontspec}
+\usepackage{parskip}
+\usepackage[x11names]{xcolor}
+\usepackage[normalem]{ulem}
+\usepackage{titling}
+
+\usepackage{xeCJK}
+
+\xeCJKsetup{CJKspace=true}
+\setCJKmainfont{Source Han Sans SC}
+\setmainfont{Source Sans Pro}
+\setmonofont{Source Code Pro}
+
+% titling 选项
+% 左对齐标题；超大字体
+\pretitle{\begin{flushleft} \huge}
+\posttitle{\end{flushleft}}
+% 不要原作者，不要原作者
+\preauthor{}
+\postauthor{}
+% 没有把日期放在标题正下方的打算
+\predate{}
+\postdate{}
+
+
