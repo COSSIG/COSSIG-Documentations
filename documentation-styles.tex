@@ -1,8 +1,11 @@
 % 这个文件包含了合规的文档样式。如果想要让你的文档的样式符合规定，请在你的 tex 代码中引用这个文件。
 
-\documentclass[10pt, a4paper]{article}
+\documentclass{article}[10pt, a4paper]
 
-\usepackage[left=25mm, right=25mm, top=25mm, bottom=25mm, headheight=18pt]{geometry}
+\usepackage{geometry}
+[
+    left=25mm, right=25mm, top=25mm, bottom=25mm, headheight=18pt
+]
 
 \usepackage{setspace}
 \usepackage{hyphenat}
@@ -23,6 +26,22 @@
 \setCJKmainfont{Source Han Sans SC}  % 中文字体：思源黑体（大陆简体）
 \setmainfont{Source Sans Pro}
 \setmonofont{Source Code Pro}
+
+% 特殊用途字体 - 用于序号和特别标题
+
+\newfontfamily\Montserrat{Montserrat-Regular}
+[
+    ItalicFont = Montserrat-Italic,
+    BoldFont = Montserrat-Bold,
+    BoldItalicFont = Montserrat-BoldItalic
+]
+
+\newfontfamily\MontserratExb{Montserrat-ExtraBold}
+[
+    ItalicFont = Montserrat-ExtraBoldItalic,
+    BoldFont = Montserrat-Black,
+    BoldItalicFont = Montserrat-BlackItalic
+]
 
 % 标题设定
 % 左对齐标题；超大字号
