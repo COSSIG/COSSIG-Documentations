@@ -15,6 +15,7 @@
 \usepackage[x11names]{xcolor}
 \usepackage[normalem]{ulem}
 \usepackage{titling}
+\usepackage{titlesec}
 
 \usepackage{xeCJK}
 \xeCJKsetup{CJKspace=true}  % 编译时不忽视中、日、韩文文字间的空格
@@ -43,7 +44,14 @@
     BoldItalicFont = Montserrat-BlackItalic
 ]
 
-% 标题设定
+% 常用色彩预设
+\selectcolormodel{RGB}
+\definecolor{ThemeDarkBlue}{RGB}{16, 27, 47}
+\definecolor{ThemeYellow}{RGB}{255, 217, 202}
+\definecolor{LightGrey}{RGB}{164, 164, 164}  % Grey - 英式拼写
+\definecolor{LightGray}{RGB}{164, 164, 164}  % Gray - 美式拼写
+
+% 标题设定 - 大标题
 % 左对齐标题；超大字号
 \pretitle{\begin{flushleft} \huge}
 \posttitle{\end{flushleft}}
@@ -54,9 +62,23 @@
 \predate{}
 \postdate{}
 
-% 常用色彩预设
-\selectcolormodel{RGB}
-\definecolor{ThemeDarkBlue}{RGB}{16, 27, 47}
-\definecolor{ThemeYellow}{RGB}{255, 217, 202}
-\definecolor{LightGrey}{RGB}{164, 164, 164}  % Grey - 英式拼写
-\definecolor{LightGray}{RGB}{164, 164, 164}  % Gray - 美式拼写
+% 标题设定 - 小节标题
+% 不要在下面的代码里乱加空格或者注释，可能会让标题序号前面无缘无故多出空格
+% 以上提到的行为可能跟 TeX 编译器处理空格的方式有关系，但反正不太妙就是了
+
+\renewcommand{\thesection}
+{% 序号设定 - 字体为 Montserrat ExtraBold
+    \MontserratExb\arabic{section}/
+}  
+
+\titleformat{\section}[block]
+    {% 大号字体，行间距 1.2，深蓝色
+        \Large
+        \setstretch{1.2}
+        \color{ThemeDarkBlue}
+    }
+    {% 序号和标题间换行
+        \thesection\\*
+    }
+    {0cm}
+    {\textbf}  % 标题本体使用粗体
